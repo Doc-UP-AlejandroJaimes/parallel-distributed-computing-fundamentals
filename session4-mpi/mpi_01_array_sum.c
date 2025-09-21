@@ -31,7 +31,7 @@ int* initialize_data(int rank) {
         data = (int*) malloc(N * sizeof(int));
         
         for (int i = 0; i < N; i++) {
-            data[i] = 1;
+            data[i] = ((i + 1) * 5) % 100;
         }
         printf("Proceso 0 inicializando array de %d de datos\n", N);
     }
@@ -48,7 +48,7 @@ int* distribute_data(int *data, int local_n, int rank, int size) {
 }
 
 // Función que calcula suma local
-long long compute_local_sum(int *local_data, int local_n) {
+long long compute_local_sum(int *local_data, int local_n, int rank) {
     long long local_sum = 0;
     for (int i = 0; i < local_n; i++) {
         local_sum += local_data[i];
@@ -78,7 +78,7 @@ int main(int argc, char** argv) {
     local_n = N / size;
     data = initialize_data(rank);
     local_data = distribute_data(data, local_n, rank, size);
-    local_sum = compute_local_sum(local_data, local_n);
+    local_sum = compute_local_sum(local_data, local_n, rank);
     total_sum = collect_global_sum(local_sum);
 
     if (rank == 0) {
