@@ -5,7 +5,7 @@ int main () {
     int value = 5;
     int *p = &value;
 
-    printf("value: %d , and pointer value", value, *p);
+    printf("value: %d , and pointer value: %d", value, *p);
 
     // Change value by pointer
     *p = 15;
