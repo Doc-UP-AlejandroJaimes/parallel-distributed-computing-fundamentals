@@ -10,7 +10,6 @@ void fill_array(int *arr, int size) {
     {
         *(arr + i) = N + i + 1;
     }
-    
 }
 
 void sum_array(int *arr, int size, long int *result_sum) {
@@ -38,17 +37,14 @@ int main () {
 
     // Free memory
     free(arr);
-    
+
     // Results
     double elapsed_time = (double) (clock() - start_time) / CLOCKS_PER_SEC;
-
 
     printf("Array Elements: %d\n", N);
     printf("Total Sum: %ld\n", result_sum);
     printf("Elapsed Time: %.3fsg\n", elapsed_time);
 
-
-
-
-
+    // add return 0 for successful execution
+    return 0;
 }
