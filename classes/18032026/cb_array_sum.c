@@ -8,7 +8,7 @@
 void fill_array(int *arr, int size) {
     for (int i = 0; i < size; i++)
     {
-        *(arr + i) = N + i + 1;
+        *(arr + i) = (N % 10) + i + 1;
     }
     
 }
@@ -46,9 +46,5 @@ int main () {
     printf("Array Elements: %d\n", N);
     printf("Total Sum: %ld\n", result_sum);
     printf("Elapsed Time: %.3fsg\n", elapsed_time);
-
-
-
-
 
 }
