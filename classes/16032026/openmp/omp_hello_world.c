@@ -8,3 +8,17 @@
 
 #include <stdio.h>
 #include <omp.h>
+
+int main () {
+
+    #pragma omp parallel 
+    {
+        printf("Hello world!\n");
+    }
+    // gcc omp_hello_world.c -o omp_hello_world.exe
+    // gcc -fopenmp omp_hello_world.c -o omp_hello_world.exe
+    return 0;
+}
+
+
+
